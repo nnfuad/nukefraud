@@ -15,6 +15,8 @@ from .mlp import FraudMLP
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+Path(MODEL_DIR).mkdir(exist_ok=True) 
+
 # Minibatch training+validation split+early stopping+threshold optimization for lessening overfittig.
 def train_mlp():
     # Hyperparameters
@@ -61,7 +63,8 @@ def train_mlp():
 
     criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
-
+    
+    best_model_path = Path(MODEL_DIR) / "best_mlp.pt"
     best_val_loss = float("inf")
     patience_counter = 0
 
@@ -99,7 +102,8 @@ def train_mlp():
         if val_loss < best_val_loss:
             best_val_loss = val_loss
             patience_counter = 0
-            torch.save(model.state_dict(), "best_mlp.pt")
+            best_model_path = Path(MODEL_DIR) / "best_mlp.pt"
+            torch.save(model.state_dict(), best_model_path)
         else:
             patience_counter += 1
             if patience_counter >= patience:
@@ -107,7 +111,7 @@ def train_mlp():
                 break
 
     # Load best model
-    model.load_state_dict(torch.load("best_mlp.pt"))
+    model.load_state_dict(torch.load(best_model_path))
 
     model.eval()
     with torch.no_grad():
@@ -129,7 +133,6 @@ def train_mlp():
     print(results["Classification_Report"])
     print("Confusion Matrix:\n", results["Confusion_Matrix"])
 
-    Path(MODEL_DIR).mkdir(exist_ok=True)
 
     torch.save(model.state_dict(), f"{MODEL_DIR}/mlp_model.pt")
     joblib.dump(scaler, f"{MODEL_DIR}/mlp_scaler.joblib")
