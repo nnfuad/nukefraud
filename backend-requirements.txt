@@ -3,5 +3,5 @@ uvicorn
 numpy
 pandas
 scikit-learn
-torch
 joblib
+torch==2.2.2
