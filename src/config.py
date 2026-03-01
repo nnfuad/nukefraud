@@ -1,0 +1,11 @@
+# src/config.py
+
+RANDOM_STATE = 42
+
+TEST_SIZE = 0.2
+
+TARGET_COLUMN = "Class"
+
+MODEL_DIR = "models"
+
+THRESHOLD_DEFAULT = 0.5
