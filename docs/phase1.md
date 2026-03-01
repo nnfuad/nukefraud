@@ -54,9 +54,9 @@ Phase 1 was designed to:
 
 The baseline model uses **Logistic Regression**, modeling binary outcome probability as:
 
-[
+$$
 P(y=1 \mid x) = \frac{1}{1 + e^{-w^T x}}
-]
+$$
 
 Why logistic regression?
 
