@@ -43,7 +43,7 @@ import requests
 
 st.set_page_config(page_title="Nukefraud", layout="centered")
 
-API_URL = "http://127.0.0.1:8000/predict"
+API_URL = "https://nukefraud.onrender.com/predict"
 
 # =========================
 # Sample Data
