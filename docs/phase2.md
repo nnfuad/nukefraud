@@ -86,7 +86,7 @@ $$ \mathcal{L} = -\left[ \mathrm{pos\_weight}\, y \log(\sigma(z)) + (1-y)\log(1-
 
 Where:<br>
 
-$$ \mathrm{pos\_weight} = \frac{N_{\text{neg}}}{N_{\text{pos}}} $$
+$$ \mathrm{pos\_weight} = \frac{N_{-}}{N_{+}} $$
 <br>
 
 and in implementation this corresponds to `pos_weight` in `BCEWithLogitsLoss`.
