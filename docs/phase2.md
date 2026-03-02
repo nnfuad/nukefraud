@@ -82,16 +82,8 @@ $$
 
 The weighted loss becomes:
 
-$$
-\mathcal{L}
-=
--
-\left[
-w_{+} \, y \log(\sigma(z))
-+
-(1 - y)\log(1 - \sigma(z))
-\right]
-$$
+$$ \mathcal{L} = -\left[ \mathrm{pos\_weight}\, y \log(\sigma(z)) + (1-y)\log(1-\sigma(z)) \right] $$
+
 Where:
 $$
 w_{+} = \frac{N_-}{N_+}
