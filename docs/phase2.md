@@ -77,13 +77,20 @@ Given:
 Class imbalance is handled via:
 
 $$
-\text{pos_weight} = \frac{N_-}{N_+}
+\mathrm{pos\_weight} = \frac{N_-}{N_+}
 $$
 
 The weighted loss becomes:
 
 $$
-\mathcal{L} = - \left[ \text{pos_weight} \cdot y \log(\sigma(z)) + (1 - y)\log(1 - \sigma(z)) \right]
+\mathcal{L}
+=
+-
+\left[
+\mathrm{pos\_weight} \cdot y \log(\sigma(z))
++
+(1 - y)\log(1 - \sigma(z))
+\right]
 $$
 
 This increases gradient magnitude for fraud samples, counteracting extreme imbalance.
