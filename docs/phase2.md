@@ -92,8 +92,11 @@ w_{+} \, y \log(\sigma(z))
 (1 - y)\log(1 - \sigma(z))
 \right]
 $$
-
-Where $w_{+} = \mathrm{pos\_weight}$.
+Where:
+$$
+w_{+} = \frac{N_-}{N_+}
+$$
+and in implementation this corresponds to `pos_weight` in `BCEWithLogitsLoss`.
 
 This increases gradient magnitude for fraud samples, counteracting extreme imbalance.
 
