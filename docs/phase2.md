@@ -298,7 +298,7 @@ The MLP learned slightly better global separation but failed to improve precisio
 
 The PR curve comparison is shown below:
 
-![PR Curve Comparison](nukefraud/results/figures/pr_curve_comparison.png)
+![PR Curve Comparison](../results/figures/pr_curve_comparison.png)
 
 Observations:
 
@@ -315,7 +315,7 @@ PR curves reveal model behavior under class imbalance more transparently than RO
 
 The cost vs threshold curve is shown below:
 
-![Cost vs Threshold](nukefraud/results/figures/cost_vs_threshold.png)
+![Cost vs Threshold](../results/figures/cost_vs_threshold.png)
 
 Where:
 

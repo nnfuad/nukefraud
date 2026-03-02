@@ -55,7 +55,7 @@ sympy==1.14.0
 tenacity==9.1.4
 threadpoolctl==3.6.0
 toml==0.10.2
-torch==2.10.0
+torch==2.2.2
 tornado==6.5.4
 typing-inspection==0.4.2
 typing_extensions==4.15.0
