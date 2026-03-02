@@ -87,11 +87,13 @@ $$
 =
 -
 \left[
-\mathrm{pos\_weight} \cdot y \log(\sigma(z))
+w_{+} \, y \log(\sigma(z))
 +
 (1 - y)\log(1 - \sigma(z))
 \right]
 $$
+
+Where $w_{+} = \mathrm{pos\_weight}$.
 
 This increases gradient magnitude for fraud samples, counteracting extreme imbalance.
 
